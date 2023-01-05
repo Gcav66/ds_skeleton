@@ -7,7 +7,10 @@ on:
   pull_request:
     branches:
       - main
-  
+
+env:
+  GMAPS_KEY: ${{ secrets.GMAPS_KEY }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,7 +33,5 @@ jobs:
       
       # Train Model
       - name: Train Model
-      - env:
-          GMAPS_KEY: ${{ secrets.GMAPS_KEY }}
         run: |
           python app.py
