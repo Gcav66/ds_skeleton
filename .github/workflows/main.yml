@@ -30,5 +30,7 @@ jobs:
       
       # Train Model
       - name: Train Model
+      - env:
+        GMAPS_KEY: ${{ secrets.GMAPS_KEY }}
         run: |
           python app.py
